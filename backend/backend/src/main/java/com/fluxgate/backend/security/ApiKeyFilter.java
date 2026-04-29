@@ -81,8 +81,8 @@ public class ApiKeyFilter extends OncePerRequestFilter {
         }
         apiUsageRepository.save(
                 ApiUsage.builder()
-                        .apiKey(apiKey)
-                        .endpoint(request.getRequestURI())
+                        .apiKey(apiKeyEntity)
+                        .endpoint(uri)
                         .timestamp(LocalDateTime.now())
                         .build()
         );
